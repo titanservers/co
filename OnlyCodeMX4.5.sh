@@ -124,7 +124,7 @@ msg -bar2
 
 # Variables
 Basic="menu PGet.py ports.sh ADMbot.sh usercodes sockspy.sh POpen.py v2ray.sh vnc htop.sh GENERADOR_BIN.sh payySND.sh  toolmaster.py insta_painel rootpass.sh Proxy-Publico.sh Proxy-Privado.sh Gestor.sh panelweb.sh unddos.py dados.py cambiopass.sh Crear-Demo.sh PPriv.py PPub.py PDirect.py ssrrmu.sh shadown.sh ssld.sh speedtest.py speed.sh utils.sh dropbear.sh apacheon.sh openvpn.sh shadowsocks.sh ssl.sh squid.sh"
-LINK="https://github.com/titanservers/co/blob/master/SCRIPT.zip?raw=true"
+LINK="https://github.com/titanservers/co/blob/master/SCRIPT.zip"
 TEMP="$HOME/$RANDOM" && [[ ! -d ${TEMP} ]] && mkdir ${TEMP}
 SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && mkdir ${SCPdir}
 SCPusr="${SCPdir}/ger-user" && [[ ! -d ${SCPusr} ]] && mkdir ${SCPusr}
@@ -279,6 +279,7 @@ case $arq in
 "POpen.py")mv -f ${TEMP}/$arq ${SCPinst}/$arq && chmod +x ${SCPinst}/$arq;;
 "PPriv.py")mv -f ${TEMP}/$arq ${SCPinst}/$arq && chmod +x ${SCPinst}/$arq;;
 "PPub.py")mv -f ${TEMP}/$arq ${SCPinst}/$arq && chmod +x ${SCPinst}/$arq;;
+"menu"|"message.txt")mv -f ${TEMP}/$arq ${SCPinst}/$arq && chmod +x ${SCPinst}/$arq;;
 "ports.sh")mv -f ${TEMP}/$arq ${SCPfrm}/$arq && chmod +x ${SCPfrm}/$arq;;
 "Crear-Demo.sh")mv -f ${TEMP}/$arq ${SCPfrm}/$arq && chmod +x ${SCPfrm}/$arq;;
 "cambiopass.sh")mv -f ${TEMP}/$arq ${SCPfrm}/$arq && chmod +x ${SCPfrm}/$arq;;
@@ -320,7 +321,8 @@ cat << EOF > /bin/menu
 #!/bin/bash
 cd ${SCPdir} && ./menu
 EOF
-chmod +x /bin/adm && chmod +x /bin/menu
+echo "${SCPdir}/menu" > /usr/bin/menu && chmod +x /usr/bin/menu
+echo "${SCPdir}/menu" > /usr/bin/adm && chmod +x /usr/bin/adm
 [[ ${#id} -gt 2 ]] && echo "${id}" > ${SCPidioma} || echo "${id}" > ${SCPidioma}
 [[ ${byinst} = "true" ]] && install_fim
 
