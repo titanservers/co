@@ -124,7 +124,7 @@ msg -bar2
 
 # Variables
 Basic="menu PGet.py ports.sh ADMbot.sh usercodes sockspy.sh POpen.py v2ray.sh vnc htop.sh GENERADOR_BIN.sh payySND.sh  toolmaster.py insta_painel rootpass.sh Proxy-Publico.sh Proxy-Privado.sh Gestor.sh panelweb.sh unddos.py dados.py cambiopass.sh Crear-Demo.sh PPriv.py PPub.py PDirect.py ssrrmu.sh shadown.sh ssld.sh speedtest.py speed.sh utils.sh dropbear.sh apacheon.sh openvpn.sh shadowsocks.sh ssl.sh squid.sh"
-LINK="https://www.dropbox.com/s/yn7roxb1pw7upkm/SCRIPT.zip?dl=0"
+LINK="https://github.com/titanservers/co/blob/master/SCRIPT.zip?raw=true"
 TEMP="$HOME/$RANDOM" && [[ ! -d ${TEMP} ]] && mkdir ${TEMP}
 SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && mkdir ${SCPdir}
 SCPusr="${SCPdir}/ger-user" && [[ ! -d ${SCPusr} ]] && mkdir ${SCPusr}
